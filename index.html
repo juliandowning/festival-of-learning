@@ -287,7 +287,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:"In
 
 
 
-#reel-root #stage{
+#reel-root #r-stage{
   position:relative;
   width:1920px;height:1080px;
   overflow:hidden;
@@ -400,18 +400,18 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:"In
 }
 
 /* Progress */
-#reel-root #pb{
+#reel-root #r-pb{
   position:fixed;bottom:0;left:0;height:2px;
   background:linear-gradient(90deg,#4A8A00,#5558E8,#6B6EFF);
   z-index:200;width:0%;
 }
 
 /* Scene 6 loop SVG */
-#reel-root #loop-wrap{
+#reel-root #r-loop-wrap{
   position:relative;width:380px;height:380px;
   opacity:0;flex-shrink:0;
 }
-#loop-wrap svg{position:absolute;inset:0;}
+#r-loop-wrap svg{position:absolute;inset:0;}
 #reel-root .ln{
   position:absolute;
   display:flex;flex-direction:column;align-items:center;gap:9px;
@@ -460,85 +460,85 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:"In
 <!-- OPENING REEL PLACEHOLDER -->
 <div class="slide active" id="sl0" style="background:#0D0F1A;overflow:hidden;">
   <div id="reel-root" style="position:absolute;inset:0;width:1920px;height:1080px;">
-<div id="stage">
+<div id="r-stage">
 
 <!-- S1: Node pulse -->
-<div class="scene" id="s1">
-  <canvas class="bg" id="c1"></canvas>
-  <div class="vig" id="v1"></div>
+<div class="scene" id="r-s1">
+  <canvas class="bg" id="r-c1"></canvas>
+  <div class="vig" id="r-v1"></div>
 </div>
 
 <!-- S2: World changed -->
-<div class="scene" id="s2">
-  <canvas class="bg" id="c2"></canvas>
-  <div class="vig" id="v2"></div>
+<div class="scene" id="r-s2">
+  <canvas class="bg" id="r-c2"></canvas>
+  <div class="vig" id="r-v2"></div>
   <div class="tl">
-    <div class="cap" id="s2c">Global · Connected · Now</div>
-    <div class="hl" id="s2h">The world<br>has changed.</div>
+    <div class="cap" id="r-s2c">Global · Connected · Now</div>
+    <div class="hl" id="r-s2h">The world<br>has changed.</div>
   </div>
 </div>
 
 <!-- S3: Knowledge -->
-<div class="scene" id="s3">
-  <canvas class="bg" id="c3"></canvas>
-  <div class="vig" id="v3"></div>
+<div class="scene" id="r-s3">
+  <canvas class="bg" id="r-c3"></canvas>
+  <div class="vig" id="r-v3"></div>
   <div class="tl">
-    <div class="cap" id="s3c">Research · Theory · Rigour</div>
-    <div class="hl" id="s3h">Knowledge<br>matters.</div>
+    <div class="cap" id="r-s3c">Research · Theory · Rigour</div>
+    <div class="hl" id="r-s3h">Knowledge<br>matters.</div>
   </div>
 </div>
 
 <!-- S4: Application -->
-<div class="scene" id="s4">
-  <canvas class="bg" id="c4"></canvas>
-  <div class="vig" id="v4"></div>
+<div class="scene" id="r-s4">
+  <canvas class="bg" id="r-c4"></canvas>
+  <div class="vig" id="r-v4"></div>
   <div class="tl">
-    <div class="cap" id="s4c">Strategy · Planning · Execution</div>
-    <div class="hl" id="s4h">Application<br>matters too.</div>
+    <div class="cap" id="r-s4c">Strategy · Planning · Execution</div>
+    <div class="hl" id="r-s4h">Application<br>matters too.</div>
   </div>
 </div>
 
 <!-- S5: Decide Test Learn Improve -->
-<div class="scene" id="s5">
-  <canvas class="bg" id="c5"></canvas>
-  <div class="vig" id="v5"></div>
+<div class="scene" id="r-s5">
+  <canvas class="bg" id="r-c5"></canvas>
+  <div class="vig" id="r-v5"></div>
   <div class="tl">
-    <div class="wseq" id="wseq">
-      <span class="w" id="w1">Decide.</span>
-      <span class="sep" id="sp1"></span>
-      <span class="w" id="w2">Test.</span>
-      <span class="sep" id="sp2"></span>
-      <span class="w" id="w3">Learn.</span>
-      <span class="sep" id="sp3"></span>
-      <span class="w" id="w4">Improve.</span>
+    <div class="wseq" id="r-wseq">
+      <span class="w" id="r-w1">Decide.</span>
+      <span class="sep" id="r-sp1"></span>
+      <span class="w" id="r-w2">Test.</span>
+      <span class="sep" id="r-sp2"></span>
+      <span class="w" id="r-w3">Learn.</span>
+      <span class="sep" id="r-sp3"></span>
+      <span class="w" id="r-w4">Improve.</span>
     </div>
   </div>
 </div>
 
 <!-- S6: Loop -->
-<div class="scene" id="s6">
-  <canvas class="bg" id="c6"></canvas>
-  <div class="vig" id="v6"></div>
+<div class="scene" id="r-s6">
+  <canvas class="bg" id="r-c6"></canvas>
+  <div class="vig" id="r-v6"></div>
   <div class="tl" style="flex-direction:row;gap:110px;align-items:center;justify-content:center;">
     <div style="display:flex;flex-direction:column;gap:0;max-width:540px;">
-      <div class="hl" id="s6h" style="font-size:60px;text-align:left;line-height:1.08;">Every decision<br>creates an outcome.</div>
-      <div class="cap" id="s6c" style="margin-top:22px;margin-bottom:0;text-align:left;font-size:13px;letter-spacing:0.18em;">The loop is the lesson.</div>
+      <div class="hl" id="r-s6h" style="font-size:60px;text-align:left;line-height:1.08;">Every decision<br>creates an outcome.</div>
+      <div class="cap" id="r-s6c" style="margin-top:22px;margin-bottom:0;text-align:left;font-size:13px;letter-spacing:0.18em;">The loop is the lesson.</div>
     </div>
-    <div id="loop-wrap">
-      <svg id="lsvg" width="380" height="380" viewBox="0 0 380 380"></svg>
-      <div class="ln" id="ln0" style="top:-18px;left:50%;transform:translateX(-50%);align-items:center;">
+    <div id="r-loop-wrap">
+      <svg id="r-lsvg" width="380" height="380" viewBox="0 0 380 380"></svg>
+      <div class="ln" id="r-ln0" style="top:-18px;left:50%;transform:translateX(-50%);align-items:center;">
         <div class="nd" style="background:#6B6EFF;box-shadow:0 0 18px rgba(85,88,232,0.5);"></div>
         <div class="nl">Knowledge</div>
       </div>
-      <div class="ln" id="ln1" style="top:50%;right:-28px;transform:translateY(-50%);align-items:flex-start;">
+      <div class="ln" id="r-ln1" style="top:50%;right:-28px;transform:translateY(-50%);align-items:flex-start;">
         <div class="nd" style="background:#5EAD00;box-shadow:0 0 18px rgba(74,138,0,0.5);"></div>
         <div class="nl">Decision</div>
       </div>
-      <div class="ln" id="ln2" style="bottom:-18px;left:50%;transform:translateX(-50%);align-items:center;">
+      <div class="ln" id="r-ln2" style="bottom:-18px;left:50%;transform:translateX(-50%);align-items:center;">
         <div class="nd" style="background:#6B6EFF;box-shadow:0 0 18px rgba(85,88,232,0.5);"></div>
         <div class="nl">Feedback</div>
       </div>
-      <div class="ln" id="ln3" style="top:50%;left:-36px;transform:translateY(-50%);align-items:flex-end;">
+      <div class="ln" id="r-ln3" style="top:50%;left:-36px;transform:translateY(-50%);align-items:flex-end;">
         <div class="nd" style="background:#5EAD00;box-shadow:0 0 18px rgba(74,138,0,0.5);"></div>
         <div class="nl">Reflection</div>
       </div>
@@ -547,35 +547,35 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:"In
 </div>
 
 <!-- S7: Outcomes -->
-<div class="scene" id="s7">
-  <canvas class="bg" id="c7"></canvas>
-  <div class="vig" id="v7"></div>
+<div class="scene" id="r-s7">
+  <canvas class="bg" id="r-c7"></canvas>
+  <div class="vig" id="r-v7"></div>
   <div class="tl">
-    <div class="cap" id="s7c">Growth · Insight · Employability</div>
-    <div class="hl green" id="s7h">Every outcome<br>creates insight.</div>
+    <div class="cap" id="r-s7c">Growth · Insight · Employability</div>
+    <div class="hl green" id="r-s7h">Every outcome<br>creates insight.</div>
   </div>
 </div>
 
 <!-- S8: Brand reveal -->
-<div class="scene" id="s8">
-  <canvas class="bg" id="c8"></canvas>
-  <div class="vig" id="v8"></div>
+<div class="scene" id="r-s8">
+  <canvas class="bg" id="r-c8"></canvas>
+  <div class="vig" id="r-v8"></div>
   <div class="tl">
-    <div class="logo-reveal" id="s8logo">
+    <div class="logo-reveal" id="r-s8logo">
       <span class="xl">Xperience</span><span class="ac">Labs</span>
     </div>
-    <div class="hr-rule" id="s8rule"></div>
-    <div class="tag-block" id="s8tag">
+    <div class="hr-rule" id="r-s8rule"></div>
+    <div class="tag-block" id="r-s8tag">
       <div class="tag-line">Real-world scenarios.</div>
       <div class="tag-line">Real decisions.</div>
       <div class="tag-line em">Real outcomes.</div>
     </div>
-    <div class="site" id="s8site">xperiencelabs.ai</div>
+    <div class="site" id="r-s8site">xperiencelabs.ai</div>
   </div>
 </div>
 
 </div><!-- /stage -->
-<div id="reel-pb"></div>
+<div id="r-pb"></div>
   </div>
 </div>
     <div class="ph-ring" style="width:580px;height:580px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:0.9s;opacity:0.6;"></div>
@@ -974,14 +974,14 @@ const WHITE   = '#F0F2FF';
 
 // ── Timeline (ms) ─────────────────────────────────────────────────────────────
 const PLAN = [
-  { id:'s1', start:0,      dur:2750  },
-  { id:'s2', start:2750,   dur:5500  },
-  { id:'s3', start:8250,   dur:4800  },
-  { id:'s4', start:13050,  dur:4800  },
-  { id:'s5', start:17850,  dur:5500  },
-  { id:'s6', start:23350,  dur:4800  },
-  { id:'s7', start:28150,  dur:4800  },
-  { id:'s8', start:32950,  dur:7050  },
+  { id:'r-s1', start:0,      dur:2750  },
+  { id:'r-s2', start:2750,   dur:5500  },
+  { id:'r-s3', start:8250,   dur:4800  },
+  { id:'r-s4', start:13050,  dur:4800  },
+  { id:'r-s5', start:17850,  dur:5500  },
+  { id:'r-s6', start:23350,  dur:4800  },
+  { id:'r-s7', start:28150,  dur:4800  },
+  { id:'r-s8', start:32950,  dur:7050  },
 ];
 const REEL_TOTAL = 40000;
 
@@ -1019,8 +1019,8 @@ function setVig(id, cx=960, cy=540, r=660, alpha=0.72, col='13,15,26'){
 
 // ── S1: Pure node network, single pulse origin ────────────────────────────────
 function makeS1(){
-  const ctx = mkCtx('c1');
-  setVig('v1',960,540,800,0.6);
+  const ctx = mkCtx('r-c1');
+  setVig('r-v1',960,540,800,0.6);
 
   const N = 90;
   const nodes = [];
@@ -1190,8 +1190,8 @@ function makeEnvCanvas(id, opts={}){
 
 // ── S5: Data-grid + decision-tree abstraction ─────────────────────────────────
 function makeS5(){
-  const ctx = mkCtx('c5');
-  setVig('v5',960,540,700,0.65);
+  const ctx = mkCtx('r-c5');
+  setVig('r-v5',960,540,700,0.65);
 
   // Decision tree nodes (abstract, not software UI)
   const treeNodes = [
@@ -1304,8 +1304,8 @@ function makeS5(){
 
 // ── S6: Loop diagram canvas ───────────────────────────────────────────────────
 function makeS6(){
-  const ctx = mkCtx('c6');
-  setVig('v6',960,540,720,0.6);
+  const ctx = mkCtx('r-c6');
+  setVig('r-v6',960,540,720,0.6);
   const pts = Array.from({length:38},()=>({
     x:Math.random()*1920,y:Math.random()*1080,
     vx:rng(-0.08,0.08),vy:rng(-0.08,0.08),
@@ -1313,7 +1313,7 @@ function makeS6(){
     alpha:rng(0.05,0.18),pulse:Math.random()*Math.PI*2,
   }));
   // Draw arcs on SVG
-  const svg=$r('lsvg');
+  const svg=$r('r-lsvg');
   const cx=190,cy=190,r=145;
   const anchors=[{a:-90},{a:0},{a:90},{a:180}];
   anchors.forEach(({a},i)=>{
@@ -1358,8 +1358,8 @@ function makeS6(){
 
 // ── S8: Particle convergence ──────────────────────────────────────────────────
 function makeS8(){
-  const ctx = mkCtx('c8');
-  setVig('v8',960,480,720,0.55);
+  const ctx = mkCtx('r-c8');
+  setVig('r-v8',960,480,720,0.55);
   const cx=960, cy=470;
   const particles = Array.from({length:280},()=>{
     const a=Math.random()*Math.PI*2, d=rng(200,900);
@@ -1412,51 +1412,51 @@ function showOnly(id){
 }
 
 function s1(){
-  showOnly('s1');
+  showOnly('r-s1');
   stops.push(makeS1());
 }
 
 function s2(){
-  showOnly('s2');
-  stops.push(makeEnvCanvas('c2',{
+  showOnly('r-s2');
+  stops.push(makeEnvCanvas('r-c2',{
     glowX:300,glowY:350,glowCol:'85,88,232',glowAlpha:0.11,
     glowX2:1600,glowY2:700,glowAlpha2:0.06,
     streakN:18,particleN:65,
   }));
-  setVig('v2',760,440,800,0.62);
-  fadeUp($r('s2c'),350,800);
-  fadeUp($r('s2h'),850,1100);
+  setVig('r-v2',760,440,800,0.62);
+  fadeUp($r('r-s2c'),350,800);
+  fadeUp($r('r-s2h'),850,1100);
 }
 
 function s3(){
-  showOnly('s3');
-  stops.push(makeEnvCanvas('c3',{
+  showOnly('r-s3');
+  stops.push(makeEnvCanvas('r-c3',{
     glowX:1500,glowY:280,glowCol:'74,138,0',glowAlpha:0.09,
     glowX2:300,glowY2:700,glowCol2:'85,88,232',glowAlpha2:0.06,
     streakN:12,particleN:50,accentA:GREEN,accentB:GREENL,
   }));
-  setVig('v3',960,540,760,0.65);
-  fadeUp($r('s3c'),350,800);
-  fadeUp($r('s3h'),850,1100);
+  setVig('r-v3',960,540,760,0.65);
+  fadeUp($r('r-s3c'),350,800);
+  fadeUp($r('r-s3h'),850,1100);
 }
 
 function s4(){
-  showOnly('s4');
-  stops.push(makeEnvCanvas('c4',{
+  showOnly('r-s4');
+  stops.push(makeEnvCanvas('r-c4',{
     glowX:960,glowY:680,glowCol:'85,88,232',glowAlpha:0.12,
     glowX2:400,glowY2:200,glowCol2:'74,138,0',glowAlpha2:0.07,
     streakN:22,particleN:58,
   }));
-  setVig('v4',960,540,740,0.62);
-  fadeUp($r('s4c'),350,800);
-  fadeUp($r('s4h'),850,1100);
+  setVig('r-v4',960,540,740,0.62);
+  fadeUp($r('r-s4c'),350,800);
+  fadeUp($r('r-s4h'),850,1100);
 }
 
 function s5(){
-  showOnly('s5');
+  showOnly('r-s5');
   stops.push(makeS5());
-  setVig('v5',960,540,700,0.65);
-  const els=['w1','sp1','w2','sp2','w3','sp3','w4'];
+  setVig('r-v5',960,540,700,0.65);
+  const els=['r-w1','r-sp1','r-w2','r-sp2','r-w3','r-sp3','r-w4'];
   els.forEach((id,i)=>{
     go($r(id),[
       {opacity:0,transform:'translateY(22px)'},
@@ -1466,50 +1466,50 @@ function s5(){
 }
 
 function s6(){
-  showOnly('s6');
+  showOnly('r-s6');
   stops.push(makeS6());
-  fadeUp($r('s6h'),400,1000);
-  fadeIn($r('s6c'),1100,900);
-  fadeIn($r('loop-wrap'),700,1100);
-  ['ln0','ln1','ln2','ln3'].forEach((id,i)=>fadeIn($r(id),1300+i*320,700));
+  fadeUp($r('r-s6h'),400,1000);
+  fadeIn($r('r-s6c'),1100,900);
+  fadeIn($r('r-loop-wrap'),700,1100);
+  ['r-ln0','r-ln1','r-ln2','r-ln3'].forEach((id,i)=>fadeIn($r(id),1300+i*320,700));
 }
 
 function s7(){
-  showOnly('s7');
-  stops.push(makeEnvCanvas('c7',{
+  showOnly('r-s7');
+  stops.push(makeEnvCanvas('r-c7',{
     glowX:960,glowY:260,glowCol:'74,138,0',glowAlpha:0.11,
     glowX2:1600,glowY2:800,glowCol2:'85,88,232',glowAlpha2:0.06,
     accentA:GREEN,accentB:GREENL,streakN:16,particleN:55,
   }));
-  setVig('v7',960,540,760,0.62);
-  fadeUp($r('s7c'),350,800);
-  fadeUp($r('s7h'),850,1100);
+  setVig('r-v7',960,540,760,0.62);
+  fadeUp($r('r-s7c'),350,800);
+  fadeUp($r('r-s7h'),850,1100);
 }
 
 let s8ctrl;
 function s8(){
-  showOnly('s8');
+  showOnly('r-s8');
   s8ctrl=makeS8();
   stops.push(s8ctrl.stop);
   setTimeout(()=>s8ctrl.start(),80);
 
-  go($r('s8logo'),[
+  go($r('r-s8logo'),[
     {opacity:0,transform:'scale(0.86) translateY(24px)'},
     {opacity:1,transform:'scale(1) translateY(0)'}
   ],{delay:280,duration:1500,fill:'forwards',easing:'cubic-bezier(0.22,1,0.36,1)'});
 
-  go($r('s8rule'),[{width:'0',opacity:0},{width:'280px',opacity:1}],
+  go($r('r-s8rule'),[{width:'0',opacity:0},{width:'280px',opacity:1}],
     {delay:1500,duration:900,fill:'forwards',easing:'ease-out'});
 
-  fadeIn($r('s8tag'),2200,1100);
-  fadeIn($r('s8site'),3600,1000);
+  fadeIn($r('r-s8tag'),2200,1100);
+  fadeIn($r('r-s8site'),3600,1000);
 }
 
 // ════════════════════════════════════════════════════════════════════════════
 // TIMELINE DRIVER
 // ════════════════════════════════════════════════════════════════════════════
 const runners=[s1,s2,s3,s4,s5,s6,s7,s8];
-const pb=$r('reel-pb');
+const pb=$r('r-pb');
 let t0=null;
 
 function tick(ts){
