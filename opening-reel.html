@@ -857,11 +857,17 @@ function tick(ts){
       break;
     }
   }
+  // Volume fade-out over last 3s
+  if(window._ra && e>=37000){
+    var fadeProgress = Math.min((e-37000)/3000, 1);
+    window._ra.volume = Math.max(0.85*(1-fadeProgress), 0);
+  }
+
   if(e<TOTAL){
     requestAnimationFrame(tick);
   } else {
     try{ window.parent.postMessage('reelComplete','*'); }catch(ex){}
-    if(window._ra) window._ra.pause();
+    if(window._ra){ window._ra.volume=0; window._ra.pause(); }
   }
 }
 
@@ -875,7 +881,7 @@ function tick(ts){
   function startReel(){
     if(window._reelStarted) return;
     window._reelStarted=true;
-    a.currentTime=20;
+    a.currentTime=17;
     a.play().catch(function(){});
     // Kick off the animation ticker
     requestAnimationFrame(tick);
