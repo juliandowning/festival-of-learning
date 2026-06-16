@@ -385,17 +385,25 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:"In
   </div>
 </div>
 
-<!-- PRODUCT VIDEO PLACEHOLDER -->
+<!-- PRODUCT VIDEO -->
 <div class="slide" id="sl6">
-  <div class="ph-wrap" style="background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(74,138,0,0.06) 0%,transparent 70%),var(--bg);">
-    <div class="ph-ring" style="width:380px;height:380px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(107,191,0,0.16);"></div>
-    <div class="ph-ring" style="width:580px;height:580px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:0.9s;border-color:rgba(107,191,0,0.08);"></div>
-    <div class="ph-icon">🖥</div>
-    <div class="ph-title" style="color:var(--gbright);">PRODUCT EXPERIENCE</div>
-    <div class="ph-sub">3–4 minute Synthesia walkthrough · Insert video here</div>
-    <div class="ph-badge" style="background:var(--green);">Advances on completion</div>
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#000;">
+    <video
+      id="product-video"
+      src="https://res.cloudinary.com/dkuy6vors/video/upload/v1781623099/Festival_of_Learning_Final_g69hnj.mp4"
+      controls
+      preload="metadata"
+      playsinline
+      style="width:100%;height:100%;object-fit:contain;"
+    ></video>
   </div>
 </div>
+<script>
+  document.getElementById('product-video').addEventListener('ended', function() {
+    var e = new KeyboardEvent('keydown', {key:'ArrowRight', keyCode:39, bubbles:true});
+    document.dispatchEvent(e);
+  });
+</script>
 
 <!-- SLIDE 6 — CHALLENGE / QR -->
 <div class="slide" id="sl7">
