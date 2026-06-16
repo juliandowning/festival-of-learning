@@ -397,6 +397,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:"In
       style="width:100%;height:100%;object-fit:contain;"
     ></video>
   </div>
+  <!-- Transparent overlay: click-through for clicker, but video controls still work via keyboard -->
+  <div id="video-click-overlay" style="position:absolute;inset:0;z-index:10;cursor:pointer;" onclick="next()"></div>
 </div>
 <script>
   document.getElementById('product-video').addEventListener('ended', function() {
@@ -650,6 +652,18 @@ const next = function() { goTo(current + 1,  1); };
 const prev = function() { goTo(current - 1, -1); };
 
 document.addEventListener('keydown', function(e) {
+  // Block slide navigation while on slide 0 with overlay visible
+  var overlay = document.getElementById('reel-overlay');
+  if (current === 0 && overlay && overlay.style.display !== 'none') {
+    // Any key dismisses the overlay and starts the reel
+    if (['ArrowRight','ArrowDown',' ','PageDown','ArrowLeft','ArrowUp','PageUp','Enter'].indexOf(e.key) !== -1) {
+      e.preventDefault();
+      overlay.style.display = 'none';
+      var f = document.getElementById('reelFrame');
+      if(f && f.contentWindow) f.contentWindow.postMessage('startReel', '*');
+    }
+    return;
+  }
   switch(e.key) {
     case 'ArrowRight': case 'ArrowDown': case ' ': case 'PageDown':
       e.preventDefault(); next(); break;
@@ -671,6 +685,9 @@ document.addEventListener('touchend', function(e) {
 }, {passive:true});
 
 document.getElementById('deck').addEventListener('click', function(e) {
+  // If on slide 0 and reel overlay still visible, ignore deck clicks
+  var overlay = document.getElementById('reel-overlay');
+  if (current === 0 && overlay && overlay.style.display !== 'none') return;
   (e.clientX / window.innerWidth > 0.5) ? next() : prev();
 });
 
