@@ -16,15 +16,16 @@ html,body{
   background:#0D0F1A;
   font-family:'Inter',sans-serif;
   -webkit-font-smoothing:antialiased;
+  display:flex;align-items:center;justify-content:center;
 }
 
 #stage{
-  position:absolute;
-  top:0;left:0;
+  position:relative;
+  flex-shrink:0;
   width:1920px;height:1080px;
   overflow:hidden;
   background:#0D0F1A;
-  transform-origin:top left;
+  transform-origin:center center;
 }
 
 /* Scenes */
@@ -78,10 +79,10 @@ canvas.bg{
 .hl.purple{color:#6B6EFF;}
 
 /* Word sequence */
-.wseq{display:flex;gap:28px;align-items:center;justify-content:center;width:1800px;}
+.wseq{display:flex;gap:20px;align-items:center;justify-content:center;width:1760px;}
 .wseq .w{
   font-family:'Montserrat',sans-serif;
-  font-weight:900;font-size:72px;
+  font-weight:900;font-size:62px;
   letter-spacing:-0.04em;
   color:#F0F2FF;opacity:0;
 }
@@ -165,6 +166,7 @@ canvas.bg{
     if(!s) return;
     var sc=Math.min(window.innerWidth/1920, window.innerHeight/1080);
     s.style.transform='scale('+sc+')';
+    s.style.transformOrigin='center center';
   }
   scaleReel();
   window.addEventListener('resize', scaleReel);
@@ -275,10 +277,10 @@ canvas.bg{
       <span class="xl">Xperience</span><span class="ac">Labs</span>
     </div>
     <div class="hr-rule" id="s8rule"></div>
-    <div class="tag-block" id="s8tag">
-      <div class="tag-line">Real-world scenarios.</div>
-      <div class="tag-line">Real decisions.</div>
-      <div class="tag-line em">Real outcomes.</div>
+    <div class="tag-block" id="s8tag" style="opacity:1;">
+      <div class="tag-line" id="tl1" style="opacity:0;">Real-world scenarios.</div>
+      <div class="tag-line" id="tl2" style="opacity:0;">Real decisions.</div>
+      <div class="tag-line em" id="tl3" style="opacity:0;">Real outcomes.</div>
     </div>
     <div class="site" id="s8site">xperiencelabs.ai</div>
   </div>
@@ -825,8 +827,10 @@ function s8(){
   go($('s8rule'),[{width:'0',opacity:0},{width:'280px',opacity:1}],
     {delay:1500,duration:900,fill:'forwards',easing:'ease-out'});
 
-  fadeIn($('s8tag'),2200,1100);
-  fadeIn($('s8site'),3600,1000);
+  fadeUp($('tl1'),2100,900);
+  fadeUp($('tl2'),2650,900);
+  fadeUp($('tl3'),3200,900);
+  fadeIn($('s8site'),4000,1000);
 }
 
 // ════════════════════════════════════════════════════════════════════════════
